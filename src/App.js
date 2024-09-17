@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/home';
+import About from './pages/about';
+import Error from './pages/error';
+import Presentation from './pages/presentation';  // Ajoute le composant Presentation
+import Header from './components/header';
+import Footer from './components/footer';
+import '../src/styles/global.scss'; // Importer le fichier CSS global
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />  {/* Le Header sera visible sur toutes les pages */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/presentation/:id" element={<Presentation />} />  {/* Route dynamique */}
+          <Route path="*" element={<Error />} />
+
+        </Routes>
+        <Footer />  {/* Le Footer sera visible sur toutes les pages */}
+      </div>
+    </Router>
   );
 }
 

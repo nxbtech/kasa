@@ -1,0 +1,96 @@
+.presentation {
+    position: relative; 
+    margin-top: 20px;
+
+  
+    &__title {
+      font-family: 'Montserrat', sans-serif;
+      color: #FF6060;
+      font-size: 36px;
+      font-weight: 500;
+  
+      h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: #FF6060;
+        font-size: 36px;
+        font-weight: 500;
+      }
+  
+      h5 {
+        font-size: 18px;
+        color: black;
+        font-weight: 500;
+        line-height: 26px;
+        margin-top: -20px;
+      }
+    }
+  }
+  
+  .tags {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .informations {
+    position: relative; /* Nécessaire pour que les éléments enfants positionnés absolument soient placés par rapport à cette div */
+  
+    .people-container {
+      position: absolute; /* Positionne le conteneur de la personne absolument par rapport à la div parent */
+      top: 0; /* Aligne le conteneur en haut */
+      right: 0; /* Aligne le conteneur à droite */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+
+  .opener-container {
+    display: flex;
+    gap: 20px;  // Espace entre les openers
+    margin: auto;
+    justify-content: space-around;
+    max-width: 1240px;
+    margin-bottom: 40px;
+  }
+  
+  .opener-wrapper {
+    width: 49%;  // Largeur de chaque opener
+  }
+
+  @media (max-width: 758px) {
+    .opener-container {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .opener-wrapper {
+      width: 100%;
+    }
+
+    .informations {
+      position: relative;
+    
+      .people-container {
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative; /* Supprime le positionnement absolu */
+        align-items: center ;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+    }
+    
+    .rating {
+      display: flex;
+      justify-content: flex-start; /* Par défaut, les étoiles sont à droite */
+      margin: 0;
+
+  }
+
+  .tags {
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+}

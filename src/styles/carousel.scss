@@ -1,0 +1,89 @@
+.carousel {
+    position: relative;
+    display: flex;
+    width: 100%;  // Utilise 100% pour la largeur, mais pas la hauteur
+    max-width: 1240px;  // Largeur maximale du carrousel
+    height: 415px;  // Hauteur par défaut sur desktop
+    min-height: 415px;  // Hauteur minimale pour éviter le rétrécissement
+    border-radius: 25px;  // Bordures arrondies
+    overflow: hidden;  // Cache tout débordement
+
+    &__inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image {
+        width: 100%;  // Utilise 100% pour la largeur
+        min-height: 415px;  // Utilise 100% pour la hauteur
+        object-fit: cover;  // Couvre entièrement le conteneur
+        border-radius: inherit;  // Hérite du border-radius du conteneur
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;  // Supprime le fond des boutons
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        z-index: 2;
+        width: 47px;
+        height: 80px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &--prev {
+            left: 10px;  // Positionne le bouton à gauche
+            img {
+                transform: rotate(90deg);  // Flèche pointant vers la gauche
+            }
+        }
+
+        &--next {
+            right: 10px;  // Positionne le bouton à droite
+            img {
+                transform: rotate(-90deg);  // Flèche pointant vers la droite
+            }
+        }
+    }
+
+    .carousel__no-images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: #FF6060;
+        font-size: 18px;
+    }
+
+    @media (max-width: 758px) {
+        height: 255px ;
+        min-height: 255px;
+        width: 100%;  // Fixe la largeur pour les petits écrans
+        border-radius: 10px;  // Bordures arrondies plus petites
+        overflow: hidden;  // Cache tout débordement
+        object-fit: cover;
+
+        &__image {
+            width: 100%;  // Assure que l'image couvre toute la largeur
+            min-height: 255px;  // Assure que l'image couvre toute la hauteur
+            border-radius: 10px;  // Applique les bordures arrondies à l'image
+            object-fit: cover;
+        }
+
+        &__button {
+            height: 24px;
+            width: 24px;  // Ajuste la taille des boutons pour les petits écrans
+        }
+    }
+}

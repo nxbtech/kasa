@@ -1,0 +1,28 @@
+/* Paramètres généraux pour toutes les pages */
+* {
+    box-sizing: border-box; /* Assure une gestion cohérente des marges et padding */
+}
+
+body {
+    max-width: 1240px;  /* Largeur maximale du contenu */
+    margin: 20px auto 0 auto;  /* Centre le contenu avec des marges égales à gauche et à droite */
+    padding: 0 20px;  /* Ajoute un peu de padding à l'intérieur si nécessaire */
+}
+
+/* Optionnel : règle pour les sections */
+.section {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto; /* Centre chaque section de la page */
+}
+
+/* Paramètres spécifiques pour maintenir le footer en bas */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que la hauteur minimale est égale à la hauteur de la fenêtre */
+}
+
+.content {
+    flex: 1; /* Prend tout l'espace disponible entre le header et le footer */
+}

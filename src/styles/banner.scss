@@ -1,0 +1,62 @@
+.container-banner {
+    max-width: 1240px;
+    height: 223px;
+    position: relative; /* Nécessaire pour que le pseudo-élément soit positionné correctement */
+    border-radius: 25px; /* S'applique aussi aux enfants, y compris le pseudo-élément */
+    overflow: hidden; /* Pour s'assurer que les bordures arrondies sont respectées */
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &__image {
+        width: 100%; /* S'assure que l'image couvre toute la bannière */
+        height: 100%;
+        object-fit: cover;
+        border-radius: 25px; /* Assure que l'image suit les bords arrondis */
+        z-index: 1; /* Place l'image en dessous du pseudo-élément */
+    }
+
+    /* Le pseudo-élément pour superposer un fond noir */
+    &::after {
+        content: ''; /* Crée un pseudo-élément */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: black;
+        opacity: 0.6; /* Utilise une opacité de 60% */
+        border-radius: 25px; /* Applique les mêmes bords arrondis */
+        z-index: 2; /* Assure que le fond noir est au-dessus de l'image */
+    }
+
+    &__text {
+        position: absolute;
+        z-index: 3; /* Le texte est au-dessus du fond et de l'image */
+        font-size: 48px;
+        color: white;
+        font-weight: 700;
+        top: 30%; /* Positionne le texte au milieu de la bannière */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centre le texte horizontalement et verticalement */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Centre le texte */
+        white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    }
+
+    @media (max-width:758px) {
+        height: 111px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        &__text {
+            width: 225px;
+            font-size: 24px;
+            text-align: left;
+            white-space: normal;
+            left: 40%;
+        }
+
+    }
+}

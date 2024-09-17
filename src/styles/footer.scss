@@ -1,0 +1,38 @@
+.footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Assure que le footer prend toute la largeur de l'écran */
+    height: 209px;
+    margin: 0; /* Supprime toute marge */
+    margin-top: 30px;
+    position: relative;
+    left: calc(-50vw + 50%); /* Corrige la largeur pour éviter l'effet de la marge du body */
+    bottom: 0;
+
+    &__img {
+        img {
+            width: 122px;  /* Taille de l'image */
+            height: 40px;
+        }
+    }
+
+    &__text {
+        color: white;
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    @media (max-width: 758px) {
+
+        margin-top: 20px;
+        &__text {
+            width: 120px;
+            font-size: 12px;
+            line-height: 17px;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.opener__container {
+    background-color: #FF6060;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Sépare le texte et l'icône */
+    align-items: center; /* Centre verticalement */
+    max-width: 1000px;
+    height: 54px;
+    padding: 0 20px; /* Padding autour du texte */
+    border-radius: 5px;
+    cursor: pointer; /* Indique que c'est cliquable */
+
+    .opener__title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #f1f1f1;
+        line-height: 34px;
+    }
+
+    .opener__icon {
+        height: 32px;
+        width: 32px;
+        transition: transform 0.3s ease; /* Transition pour l'icône */
+
+        /* Rotation de l'icône lorsque la section est ouverte */
+        &--open {
+            transform: rotate(180deg);
+        }
+    }
+
+    @media (max-width: 758px) {
+        height: 34px;
+
+        .opener__title {
+            font-size: 13px;
+        }
+
+        .opener__icon {
+            width: 16px;
+            height: 10px;
+        }
+    }
+}
+
+.opener__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease; /* Animation pour l'ouverture/fermeture */
+    background-color: #f6f6f6;
+    padding: 0 20px;
+    border-radius: 0 0 5px 5px;
+    font-size: 18px;
+    line-height: 26px;
+    color: black;
+    max-width: 1000px;
+
+    &--open {
+        max-height: 200px; /* Ajuste la hauteur selon le contenu */
+        padding: 20px; /* Ajoute du padding lorsque le contenu est visible */
+    }
+
+    @media (max-width: 758px) {
+        font-size: 12px;
+    }
+}

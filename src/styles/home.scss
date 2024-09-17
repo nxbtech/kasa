@@ -1,0 +1,20 @@
+.grid-cards {
+    display: grid;  /* Active le mode grille */
+    grid-template-columns: repeat(3, 1fr);  /* Crée 3 colonnes de largeur égale */
+    gap: 50px;  /* Ajoute un espace entre les éléments de la grille */
+    max-width: 1240px;
+    border-radius: 25px;
+    background-color: #F6F6F6;
+    padding: 40px;
+    margin-bottom: 40px;
+
+}
+
+@media (max-width: 758px) {
+    .grid-cards {
+    grid-template-columns: auto; /* Ajuste la colonne à la largeur du contenu */
+    padding: 0;
+    background-color: white;
+    gap: 22px
+}
+}

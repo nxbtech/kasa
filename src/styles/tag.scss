@@ -1,0 +1,26 @@
+.tag {
+    background-color: #FF6060;
+    min-width: 115px;
+    height: 25px;
+    border-radius: 10px;
+    display: flex;  // Utilise flexbox pour centrer le texte
+    align-items: center;  // Aligne verticalement le texte au centre
+    justify-content: center;  // Aligne horizontalement le texte au centre
+
+    &__item {
+        font-size: 14px;
+        color: white;
+        font-weight: 700;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    @media (max-width: 758px) {
+        height: 18px;
+        min-width: 84px;
+
+        &__item {
+            font-size: 10px;
+        }
+    }
+}

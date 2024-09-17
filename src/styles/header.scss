@@ -1,0 +1,72 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1240px;
+    height: 68px;
+    align-items: center; 
+
+    &__img {
+        width: 210px;
+
+        img {  /* Cible directement l'élément image */
+            width: 100%; /* L'image occupe toute la largeur du conteneur */
+            height: auto; /* La hauteur s'ajuste automatiquement en fonction de la largeur */
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        list-style: none;
+        gap: 57px;
+        text-decoration: none;
+    }
+
+    &__nav-item {
+        cursor: pointer;
+        font-size: 24px ;
+        text-decoration: inherit;
+        color: black;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media (max-width: 758px) {
+        height: 47px;
+
+        &__img {
+            width: 145px; /* Change la taille du conteneur d'image */
+
+            img {  /* Ajuste également la taille de l'image elle-même */
+                width: 100%; /* S'assure que l'image prend toute la largeur du conteneur */
+                height: auto; /* Ajuste la hauteur automatiquement */
+            }
+        }
+
+        &__nav-list {
+            gap: 26px;
+        }
+
+        &__nav-item {
+            font-size: 12px;
+        }
+    }
+}
+
+.header__nav-item a {
+    color: inherit; /* Utilise la couleur héritée du parent pour garder cohérence */
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: inherit; /* Change la couleur des liens visités */
+    }
+
+    &:link {
+        color: inherit; /* Change la couleur des liens non visités */
+    }
+}

@@ -1,0 +1,62 @@
+.people {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligne toute la div .people à droite */
+    width: 100%; /* Assure que la div prend toute la largeur disponible */
+
+    &__host {
+        display: flex;
+        align-items: center; /* Centre verticalement l'image et le nom */
+        gap: 10px; /* Espace entre l'image et le nom */
+        justify-content: flex-end; /* Aligne l'image et le nom à droite */
+    }
+
+    &__image {
+        height: 64px;
+        width: 64px;
+
+        img {
+            height: 64px;
+            width: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: right;
+        width: 93px;
+
+        .people__name {
+            font-size: 18px;
+            font-weight: 500;
+            color: #FF6060;
+            word-wrap: break-word;
+            text-align: right;
+        }
+    }
+    /* Media query pour les écrans en dessous de 758px */
+    @media (max-width: 758px) {
+        
+
+
+        &__name {
+            font-size: 12px !important; /* On force la taille du texte à 12px pour les petits écrans */
+            width: 70px;
+        }
+
+        &__image {
+            height: 32px; /* Réduit la taille de l'image à 32px */
+            width: 32px;
+            margin-left: -20px;
+
+            img {
+                height: 32px;
+                width: 32px;
+            }
+        }
+    }
+}
