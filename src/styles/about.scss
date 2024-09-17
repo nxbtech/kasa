@@ -1,7 +1,7 @@
 .about {
     display: flex;
     flex-direction: column;
-    height: auto;
+    min-height: 70vh;
 
     /* Les styles pour la bannière restent inchangés, donc on ne touche pas ici */
     &__banner {
@@ -17,5 +17,9 @@
         width: 100%;  /* Pour que les openers prennent toute la largeur */
         max-width: 1000px; /* Limite la taille maximale des openers */
         margin: auto; /* Centre le bloc des openers */
+    }
+
+    @media (max-width: 758px) {
+        min-height: auto;
     }
 }

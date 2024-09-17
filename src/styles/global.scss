@@ -7,6 +7,9 @@ body {
     max-width: 1240px;  /* Largeur maximale du contenu */
     margin: 20px auto 0 auto;  /* Centre le contenu avec des marges égales à gauche et à droite */
     padding: 0 20px;  /* Ajoute un peu de padding à l'intérieur si nécessaire */
+    min-height: 100vh; /* S'assure que le corps de la page prend la hauteur complète de la fenêtre */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Optionnel : règle pour les sections */
@@ -25,4 +28,12 @@ body {
 
 .content {
     flex: 1; /* Prend tout l'espace disponible entre le header et le footer */
+}
+
+/* Footer toujours en bas */
+footer {
+    background-color: #F6F6F6;
+    padding: 20px;
+    text-align: center;
+    /* Ajoutez d'autres styles pour le footer si nécessaire */
 }
