@@ -5,12 +5,11 @@
     margin-top: 5px; /* Espace entre le host et le rating */
 
     .star {
-        font-size: 24px;
-        color: #E3E3E3; /* Couleur des étoiles vides */
+        width: 24px; /* Taille des étoiles */
+        height: 24px; /* Taille des étoiles */
 
-        &--filled {
-            color: #FF6060; /* Couleur des étoiles remplies */
-        }
+        /* Optionnel : ajoute une couleur de fond ou un style si nécessaire */
+        background-color: transparent; /* S'il y a des bordures ou autres effets */
     }
 
     @media (max-width: 758px) {
@@ -20,7 +19,9 @@
         margin-left: 0;
 
         .star {
-            font-size: 18px;
+            width: 18px; /* Taille des étoiles réduite pour les petits écrans */
+            height: 18px;
+            margin-right: -5px;
         }
     }
 }

@@ -8,7 +8,6 @@ import Header from './components/header';
 import Footer from './components/footer';
 import '../src/styles/global.scss'; // Importer le fichier CSS global
 
-
 function App() {
   return (
     <Router>
@@ -19,10 +18,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/presentation/:id" element={<Presentation />} />  {/* Route dynamique */}
           <Route path="*" element={<Error />} />
-
         </Routes>
-        <Footer />  {/* Le Footer sera visible sur toutes les pages */}
       </div>
+      <Footer />  {/* Le Footer est en dehors du conteneur pour ne pas être limité en largeur */}
     </Router>
   );
 }

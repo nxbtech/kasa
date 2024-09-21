@@ -9,12 +9,17 @@
     padding: 0 20px; /* Padding autour du texte */
     border-radius: 5px;
     cursor: pointer; /* Indique que c'est cliquable */
+    flex-wrap: nowrap; /* Empêche le contenu de se casser sur plusieurs lignes */
 
     .opener__title {
         font-size: 24px;
         font-weight: 700;
         color: #f1f1f1;
         line-height: 34px;
+        flex-grow: 1; /* Permet au texte de prendre l'espace restant */
+        white-space: nowrap; /* Empêche le texte de passer à la ligne */
+        overflow: hidden; /* Cache le débordement du texte */
+        text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est trop long */
     }
 
     .opener__icon {
@@ -33,11 +38,12 @@
 
         .opener__title {
             font-size: 13px;
+            line-height: 16px; /* Ajuste la hauteur de ligne pour petits écrans */
         }
 
         .opener__icon {
             width: 16px;
-            height: 10px;
+            height: 16px; /* Ajuste la taille de l'icône pour les petits écrans */
         }
     }
 }
